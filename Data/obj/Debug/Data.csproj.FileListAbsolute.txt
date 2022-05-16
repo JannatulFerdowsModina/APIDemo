@@ -55,3 +55,5 @@ C:\Users\BS769\source\repos\APIDemo\Data\obj\Debug\Data.csproj.CoreCompileInputs
 C:\Users\BS769\source\repos\APIDemo\Data\obj\Debug\Data.csproj.CopyComplete
 C:\Users\BS769\source\repos\APIDemo\Data\obj\Debug\Data.dll
 C:\Users\BS769\source\repos\APIDemo\Data\obj\Debug\Data.pdb
+C:\Users\BS769\source\repos\APIDemo\Data\obj\Debug\Data.csproj.AssemblyReference.cache
+C:\Users\BS769\source\repos\APIDemo\Data\obj\Debug\Data.csproj.SuggestedBindingRedirects.cache

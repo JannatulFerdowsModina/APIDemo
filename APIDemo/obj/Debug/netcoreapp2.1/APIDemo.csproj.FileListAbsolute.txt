@@ -11,7 +11,6 @@ C:\Users\BS769\source\repos\APIDemo\APIDemo\obj\Debug\netcoreapp2.1\APIDemo.Asse
 C:\Users\BS769\source\repos\APIDemo\APIDemo\obj\Debug\netcoreapp2.1\APIDemo.RazorTargetAssemblyInfo.cache
 C:\Users\BS769\source\repos\APIDemo\APIDemo\obj\Debug\netcoreapp2.1\APIDemo.dll
 C:\Users\BS769\source\repos\APIDemo\APIDemo\obj\Debug\netcoreapp2.1\APIDemo.pdb
-C:\Users\BS769\source\repos\APIDemo\APIDemo\obj\Debug\netcoreapp2.1\APIDemo.csprojAssemblyReference.cache
 C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\Data.dll
 C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\Data.pdb
 C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\Data.dll.config
@@ -19,3 +18,13 @@ C:\Users\BS769\source\repos\APIDemo\APIDemo\obj\Debug\netcoreapp2.1\APIDemo.cspr
 C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\Service.dll
 C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\Service.pdb
 C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\Service.dll.config
+C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\appsettings.Development.json
+C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\appsettings.json
+C:\Users\BS769\source\repos\APIDemo\APIDemo\obj\Debug\netcoreapp2.1\APIDemo.csproj.AssemblyReference.cache
+C:\Users\BS769\source\repos\APIDemo\APIDemo\obj\Debug\netcoreapp2.1\APIDemo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\BS769\source\repos\APIDemo\APIDemo\obj\Debug\netcoreapp2.1\APIDemo.genruntimeconfig.cache
+C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\UnitTests.dll
+C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\nunit.framework.dll
+C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\UnitTests.pdb
+C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\UnitTests.dll.config
+C:\Users\BS769\source\repos\APIDemo\APIDemo\bin\Debug\netcoreapp2.1\nunit.framework.xml

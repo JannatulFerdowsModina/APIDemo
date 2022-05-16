@@ -1,0 +1,162 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\BS769\\source\\repos\\APIDemo\\APIDemo\\APIDemo.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\BS769\\source\\repos\\APIDemo\\APIDemo\\APIDemo.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\BS769\\source\\repos\\APIDemo\\APIDemo\\APIDemo.csproj",
+        "projectName": "APIDemo",
+        "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\APIDemo\\APIDemo.csproj",
+        "packagesPath": "C:\\Users\\BS769\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\APIDemo\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\BS769\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://tc01.rs.no/httpAuth/app/nuget/feed/_Root/default/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {
+              "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj"
+              },
+              "C:\\Users\\BS769\\source\\repos\\APIDemo\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Service\\Service.csproj"
+              },
+              "C:\\Users\\BS769\\source\\repos\\APIDemo\\UnitTests\\UnitTests.csproj": {
+                "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\UnitTests\\UnitTests.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[2.1.9, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj",
+        "projectName": "Data",
+        "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\BS769\\source\\repos\\APIDemo\\Service\\Service.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Service\\Service.csproj",
+        "projectName": "Service",
+        "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Service\\Service.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    },
+    "C:\\Users\\BS769\\source\\repos\\APIDemo\\UnitTests\\UnitTests.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Users\\BS769\\source\\repos\\APIDemo\\UnitTests\\UnitTests.csproj",
+        "projectName": "UnitTests",
+        "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\UnitTests\\UnitTests.csproj",
+        "frameworks": {
+          "net48": {
+            "projectReferences": {
+              "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj": {
+                "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj"
+              },
+              "C:\\Users\\BS769\\source\\repos\\APIDemo\\Service\\Service.csproj": {
+                "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Service\\Service.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net48": {}
+      }
+    }
+  }
+}

@@ -1,0 +1,1302 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Chinchilla.Logging</name>
+    </assembly>
+    <members>
+        <member name="T:Chinchilla.Logging.Configuration.IContainerLoggerSettings">
+            <summary>
+            The settings for all <see cref="T:Chinchilla.Logging.ILogger"/> instances.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.EnableSensitive(System.String)">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogSensitive(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.EnableInfo(System.String)">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.EnableProgress(System.String)">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.EnableDebug(System.String)">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.EnableWarning(System.String)">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogWarning(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.EnableError(System.String)">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.EnableFatalError(System.String)">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogFatalError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.EnableThreadedLogging(System.String)">
+            <summary>
+            If true, the <see cref="T:Chinchilla.Logging.ILogger"/> will use one extra thread per instance to persist logs. 
+            This means the log methods like <see cref="M:Chinchilla.Logging.ILogger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will return indicating the information is in a queue to be logged.
+            This greatly increases the performance in the event your <see cref="T:Chinchilla.Logging.ILogger"/> is under heavy load, for example, if your logging database is under strain, your application will continue to perform, but logs will be queued.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.SqlDatabaseLogsConnectionStringName(System.String)">
+            <summary>
+            The key of the <see cref="P:System.Configuration.ConfigurationManager.AppSettings"/> item that holds the name of the connection string to use.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.SqlDatabaseTableName(System.String)">
+            <summary>
+            The name of the table to use.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.UseApplicationInsightTelemetryHelper(System.String)">
+            <summary>
+            If true, all log calls will be telemetered.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Configuration.IContainerLoggerSettings.UsePerformanceCounters(System.String)">
+            <summary>
+            If true, all log calls will be telemetered.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.Configuration.ILoggerSettings">
+            <summary>
+            The settings for all <see cref="T:Chinchilla.Logging.ILogger"/> instances.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableSensitive">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogSensitive(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableInfo">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableProgress">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableDebug">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableWarning">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogWarning(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableError">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableFatalError">
+            <summary>
+            If false <see cref="M:Chinchilla.Logging.ILogger.LogFatalError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will not do anything nor log anything.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableThreadedLogging">
+            <summary>
+            If true, the <see cref="T:Chinchilla.Logging.ILogger"/> will use one extra thread per instance to persist logs. 
+            This means the log methods like <see cref="M:Chinchilla.Logging.ILogger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> will return indicating the information is in a queue to be logged.
+            This greatly increases the performance in the event your <see cref="T:Chinchilla.Logging.ILogger"/> is under heavy load, for example, if your logging database is under strain, your application will continue to perform, but logs will be queued.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableThreadedLoggingOutput">
+            <summary>
+            Doesn't do anything just yet
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.ModuleName">
+            <summary>
+            A friendly identifier to help identify different applications if they use the same <see cref="T:Chinchilla.Logging.ILogger"/>.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.Instance">
+            <summary>
+            A friendly identifier to help identify different instances of the same application, such as a development or production instance of the same application.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnvironmentInstance">
+            <summary>
+            A friendly identifier to help identify different environments of the same application, such as deployments to different geo-graphical locations of the same application.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.Environment">
+            <summary />
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.SqlDatabaseLogsConnectionStringName">
+            <summary>
+            The key of the <see cref="P:System.Configuration.ConfigurationManager.AppSettings"/> item that holds the name of the connection string to use.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.SqlDatabaseTableName">
+            <summary>
+            The name of the table to use.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.UseApplicationInsightTelemetryHelper">
+            <summary>
+            If true, all log calls will be telemetered.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.ILoggerSettings.UsePerformanceCounters">
+            <summary>
+            If true, all log calls will be telemetered.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.Configuration.LoggerSettings">
+            <summary>
+            The settings for all <see cref="T:Chinchilla.Logging.ILogger"/> instances reading settings <see cref="T:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection"/>.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnableSensitive">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableSensitive"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnableInfo">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableInfo"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnableProgress">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableProgress"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnableDebug">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableDebug"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnableWarning">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableWarning"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnableError">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableError"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnableFatalError">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableFatalError"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnableThreadedLogging">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableThreadedLogging"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.ModuleName">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.ModuleName"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.Instance">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.Instance"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnvironmentInstance">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnvironmentInstance"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.Environment">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.Environment"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.SqlDatabaseLogsConnectionStringName">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.SqlDatabaseLogsConnectionStringName"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.SqlDatabaseTableName">
+            <summary>
+            The name of the table to use.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.UseApplicationInsightTelemetryHelper">
+            <summary>
+            If true, all log calls will be telemetered.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.UsePerformanceCounters">
+            <summary>
+            If true, all log calls will be telemetered.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettings.EnableThreadedLoggingOutput">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableThreadedLoggingOutput"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection">
+            <summary>
+            The settings for all <see cref="T:Chinchilla.Logging.ILogger"/> instances reading settings from an app.config or web.config file.
+            This is used internally. Use <see cref="T:Chinchilla.Logging.Configuration.LoggerSettings"/> directly unless you know what you're doing.
+            </summary>
+            <remarks>
+            http://haacked.com/archive/2007/03/12/custom-configuration-sections-in-3-easy-steps.aspx
+            </remarks>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.Current">
+            <summary />
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnableSensitive">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableSensitive"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnableInfo">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableInfo"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnableProgress">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableProgress"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnableDebug">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableDebug"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnableWarning">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableWarning"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnableError">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableError"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnableFatalError">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableFatalError"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnableThreadedLogging">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableThreadedLogging"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.ModuleName">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.ModuleName"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.Instance">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.Instance"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnvironmentInstance">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnvironmentInstance"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.Environment">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.Environment"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.SqlDatabaseLogsConnectionStringName">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.SqlDatabaseLogsConnectionStringName"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.SqlDatabaseTableName">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.SqlDatabaseTableName"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.UseApplicationInsightTelemetryHelper">
+            <summary>
+            If true, all log calls will be telemetered.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.UsePerformanceCounters">
+            <summary>
+            If true, all log calls will be telemetered.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Configuration.LoggerSettingsConfigurationSection.EnableThreadedLoggingOutput">
+            <summary>
+            Reads the <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableThreadedLoggingOutput"/> from the <see cref="T:System.Configuration.ConfigurationSection"/> in your app.config or web.config file.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.ConsoleLogger">
+            <summary>
+            Provides a set of methods that help you log events relating to the execution of your code outputting to the <see cref="T:System.Console"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ConsoleLogger.#ctor(Chinchilla.Logging.Configuration.ILoggerSettings,Chinchilla.Logging.ICorrelationIdHelper,Chinchilla.Logging.ITelemetryHelper)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.ConsoleLogger"/> class.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ConsoleLogger.LogSensitive(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging sensitive information,
+            to the <see cref="T:System.Console"/> in <see cref="F:System.ConsoleColor.Gray"/>
+            Depending on the implementation this won't be obscured or encrypted in anyway. Use this sparingly.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ConsoleLogger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging general information, effectively the least amount of information you'd want to know about a system operation,
+            to the <see cref="T:System.Console"/> in <see cref="F:System.ConsoleColor.Gray"/>
+            Don't abuse this as you will flood the logs as this would normally never turned off. Use <see cref="M:Chinchilla.Logging.ConsoleLogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> or <see cref="M:Chinchilla.Logging.ConsoleLogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> for reporting additional information.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ConsoleLogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes logging progress information such as "Process X is 24% done"
+            to the <see cref="T:System.Console"/> in <see cref="F:System.ConsoleColor.Gray"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ConsoleLogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes diagnostic information 
+            to the <see cref="T:System.Console"/> in <see cref="F:System.ConsoleColor.Blue"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ConsoleLogger.LogWarning(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes warnings, something not yet an error, but something to watch out for,
+            to the <see cref="T:System.Console"/> in <see cref="F:System.ConsoleColor.DarkYellow"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ConsoleLogger.LogError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes errors, something handled and to be investigated,
+            to the <see cref="T:System.Console"/> in <see cref="F:System.ConsoleColor.DarkRed"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ConsoleLogger.LogFatalError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes fatal errors that have a detrimental effect on the system,
+            to the <see cref="T:System.Console"/> in <see cref="F:System.ConsoleColor.Red"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ConsoleLogger.Log(System.String,System.ConsoleColor,System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Format a message based on the input parameters to be sent to the <see cref="T:System.Console"/>
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.CorrelationIdHelper">
+            <summary>
+            A <see cref="T:Chinchilla.Logging.ICorrelationIdHelper"/> that uses the <see cref="M:Chinchilla.StateManagement.Threaded.ContextItemCollectionFactory.GetCurrentContext"/> method to get a transport collection within the <see cref="T:System.Threading.Thread"/>.
+            </summary>
+            <remarks>https://dzimchuk.net/event-correlation-in-application-insights/</remarks>
+        </member>
+        <member name="M:Chinchilla.Logging.CorrelationIdHelper.#ctor(Chinchilla.StateManagement.IContextItemCollection)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.CorrelationIdHelper"/> class using the provided <paramref name="contextItemCollection"/> to set as the value of <see cref="P:Chinchilla.Logging.CorrelationIdHelper.ContextItemCollection"/>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.CorrelationIdHelper.#ctor(Chinchilla.StateManagement.IContextItemCollectionFactory)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.CorrelationIdHelper"/> class requiring <paramref name="contextItemCollectionFactory"/>, used to set <see cref="P:Chinchilla.Logging.CorrelationIdHelper.ContextItemCollection"/> with an instance.
+            </summary>
+        </member>
+        <member name="F:Chinchilla.Logging.CorrelationIdHelper.CallContextCorrelationIdValueKey">
+            <summary>
+            The key used in the internal collection to find the CorrelationId value by.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.CorrelationIdHelper.ContextItemCollection">
+            <summary>
+            The local collection that holds values.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.CorrelationIdHelper.GetCorrelationId">
+            <summary>
+            Get the CorrelationId set via <see cref="M:Chinchilla.Logging.CorrelationIdHelper.SetCorrelationId(System.Guid)"/>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.CorrelationIdHelper.SetCorrelationId(System.Guid)">
+            <summary>
+            Set the CorrelationId.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.DatabaseLogger">
+            <summary>
+            Provides a set of methods that help you log events relating to the execution of your code outputting to a database
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.DatabaseLogger.#ctor(Chinchilla.Logging.Configuration.ILoggerSettings,Chinchilla.Logging.ICorrelationIdHelper,Chinchilla.Logging.ITelemetryHelper)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.DatabaseLogger"/> class calling the constructor on <see cref="T:Chinchilla.Logging.Logger"/>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.DatabaseLogger.GetSqlConnectionString(System.String)">
+            <summary />
+        </member>
+        <member name="M:Chinchilla.Logging.DatabaseLogger.GetDbConnection(System.String)">
+            <summary />
+        </member>
+        <member name="M:Chinchilla.Logging.DatabaseLogger.GetCommand">
+            <summary />
+        </member>
+        <member name="M:Chinchilla.Logging.DatabaseLogger.GetWriteTransaction(System.Data.IDbConnection)">
+            <summary />
+        </member>
+        <member name="M:Chinchilla.Logging.DatabaseLogger.PersistLog(Chinchilla.Logging.LogInformation)">
+            <summary>
+            Persists (or saves) the provided <paramref name="logInformation"></paramref> to the database
+            </summary>
+            <param name="logInformation">The <see cref="T:Chinchilla.Logging.LogInformation"/> holding all the information you want to persist (save) to the database.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.DatabaseLogger.CreateTable">
+            <summary>
+            Creates the required table for storing logs in
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.DatabaseLogger.GetInsertStatement(System.String)">
+            <summary>
+            Something similar to
+            INSERT INTO Logs
+            (Logs.Raised, Logs.Level, Logs.Module, Logs.Instance, Logs.Environment, Logs.EnvironmentInstance, Logs.CorrelationId, Logs.Message, Logs.Container, Logs.Exception)
+            VALUES
+            (@Raised, @Level, @Module, @Instance, @Environment, @EnvironmentInstance, @CorrelationId,@Message, @Container, @Exception);
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.DatabaseLogger.GetCreateTableStatement">
+            <summary />
+        </member>
+        <member name="T:Chinchilla.Logging.ICorrelationIdHelper">
+            <summary>
+            A CorrelationId is an identifier used to group together logs. This helper manages passing the value within the <see cref="T:System.Threading.Thread"/> without having to manually set it on ever call to the <see cref="T:Chinchilla.Logging.ILogger"/>.
+            </summary>
+            <remarks>https://dzimchuk.net/event-correlation-in-application-insights/</remarks>
+        </member>
+        <member name="M:Chinchilla.Logging.ICorrelationIdHelper.GetCorrelationId">
+            <summary>
+            Get the CorrelationId set via <see cref="M:Chinchilla.Logging.ICorrelationIdHelper.SetCorrelationId(System.Guid)"/>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ICorrelationIdHelper.SetCorrelationId(System.Guid)">
+            <summary>
+            Set the CorrelationId.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.ILogger">
+            <summary>
+            Provides a set of methods that help you log events relating to the execution of your code.
+            The <see cref="T:System.Collections.Generic.IDictionary`2">additionalData</see> parameter generally will map to something like a column is using a <see cref="T:Chinchilla.Logging.DatabaseLogger"/> using the TKey as the column name and the TValue asn the column value
+            Or TKey as the property name and the TValue asn the property value.
+            The <see cref="T:System.Collections.Generic.IDictionary`2">metaData</see> Will be serialised to a JSON string and if using a <see cref="T:Chinchilla.Logging.DatabaseLogger"/> logging will be stored to a column named 'MetaData'.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ILogger.LogSensitive(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging sensitive information,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            Depending on the implementation this won't be obscured or encrypted in anyway. Use this sparingly.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ILogger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging general information, effectively the least amount of information you'd want to know about a system operation,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            Don't abuse this as you will flood the logs as this would normally never turned off. Use <see cref="M:Chinchilla.Logging.ILogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> or <see cref="M:Chinchilla.Logging.ILogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> for reporting additional information.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ILogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes logging progress information such as "Process X is 24% done"
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ILogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes diagnostic information 
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ILogger.LogWarning(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes warnings, something not yet an error, but something to watch out for,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ILogger.LogError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes errors, something handled and to be investigated,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ILogger.LogFatalError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes fatal errors that have a detrimental effect on the system,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.ILogger.LoggerSettings">
+            <summary>
+            The <see cref="T:Chinchilla.Logging.Configuration.ILoggerSettings"/> for the instance, set during instantiation.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.ITelemetryHelper">
+            <summary>
+            Send events, metrics and other telemetry.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.ITelemetryHelper.TrackEvent(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send an event.
+            </summary>
+            <param name="eventName">A name for the event.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.ITelemetryHelper.TrackMetric(System.String,System.Double,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send a metric.
+            </summary>
+            <param name="name">Metric name.</param>
+            <param name="value">Metric value.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.ITelemetryHelper.TrackException(System.Exception,System.Collections.Generic.IDictionary{System.String,System.Double},System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send an Exception
+            </summary>
+            <param name="exception">The exception to log.</param>
+            <param name="metrics">Additional values associated with this exception.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.ITelemetryHelper.TrackDependency(System.String,System.String,System.DateTimeOffset,System.TimeSpan,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send information about an external dependency call in the application, such as a call to a database.
+            </summary>
+            <param name="dependencyName">External dependency name.</param>
+            <param name="commandName">Dependency call command name.</param>
+            <param name="startTime">The time when the dependency was called.</param>
+            <param name="duration">The time taken by the external dependency to handle the call.</param>
+            <param name="wasSuccessfull">True if the dependency call was handled successfully.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.ITelemetryHelper.TrackDependency(System.String,System.String,System.String,System.String,System.DateTimeOffset,System.TimeSpan,System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send information about an external dependency call in the application, such as a web-service call
+            </summary>
+            <param name="dependencyTypeName">External dependency type.</param>
+            <param name="target">External dependency target.</param>
+            <param name="dependencyName">External dependency name.</param>
+            <param name="data">Dependency call command name.</param>
+            <param name="startTime">The time when the dependency was called.</param>
+            <param name="duration">The time taken by the external dependency to handle the call.</param>
+            <param name="resultCode">Result code of dependency call execution.</param>
+            <param name="wasSuccessfull">True if the dependency call was handled successfully.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.ITelemetryHelper.TrackRequest(System.String,System.DateTimeOffset,System.TimeSpan,System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send information about a request handled by the application.
+            </summary>
+            <param name="name">The request name.</param>
+            <param name="startTime">The time when the page was requested.</param>
+            <param name="duration">The time taken by the application to handle the request.</param>
+            <param name="responseCode">The response status code.</param>
+            <param name="wasSuccessfull">True if the request was handled successfully by the application.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.ITelemetryHelper.TrackRequest(System.String,System.Uri,System.String,System.DateTimeOffset,System.TimeSpan,System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            Send information about a request handled by the application.
+            </summary>
+            <param name="name">The request name.</param>
+            <param name="url"></param>
+            <param name="userId">The ID of user accessing the application.</param>
+            <param name="startTime">The time when the page was requested.</param>
+            <param name="duration">The time taken by the application to handle the request.</param>
+            <param name="responseCode">The response status code.</param>
+            <param name="wasSuccessfull">True if the request was handled successfully by the application.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+            <param name="sessionId">The application-defined session ID.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.ITelemetryHelper.Flush">
+            <summary>
+            Flushes the in-memory buffer, if one exists
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.Logger">
+            <summary>
+            Provides a set of methods that help you log events relating to the execution of your code.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.Logger.DefaultJsonSerializerSettings">
+            <summary>
+            Default settings used to serialise objects for storage
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.#ctor(Chinchilla.Logging.Configuration.ILoggerSettings,Chinchilla.Logging.ICorrelationIdHelper,Chinchilla.Logging.ITelemetryHelper)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.Logger"/> class preparing the required thread pool polling if <see cref="P:Chinchilla.Logging.Configuration.ILoggerSettings.EnableThreadedLogging"/> is set to true.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.LogSensitive(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging sensitive information,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            Depending on the implementation this won't be obscured or encrypted in anyway. Use this sparingly.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging general information, effectively the least amount of information you'd want to know about a system operation,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            Don't abuse this as you will flood the logs as this would normally never turned off. Use <see cref="M:Chinchilla.Logging.Logger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> or <see cref="M:Chinchilla.Logging.Logger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> for reporting additional information.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes logging progress information such as "Process X is 24% done"
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes diagnostic information 
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.LogWarning(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes warnings, something not yet an error, but something to watch out for,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.LogError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes errors, something handled and to be investigated,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.LogFatalError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes fatal errors that have a detrimental effect on the system,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.Log(System.String,System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary />
+        </member>
+        <member name="M:Chinchilla.Logging.Logger.PersistLog(Chinchilla.Logging.LogInformation)">
+            <summary>
+            Persists (or saves) the provided <paramref name="logInformation"></paramref> to the database
+            </summary>
+            <param name="logInformation">The <see cref="T:Chinchilla.Logging.LogInformation"/> holding all the information you want to persist (save) to the database.</param>
+        </member>
+        <member name="T:Chinchilla.Logging.LogInformation">
+            <summary>
+            Information about an event to be logged
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.LogInformation.#ctor">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.LogInformation"/> class with <see cref="P:Chinchilla.Logging.LogInformation.Raised"/> set to a default value of <see cref="P:System.DateTime.UtcNow"/>
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.LogInformation.Raised">
+            <summary>
+            The <see cref="T:System.DateTime"/> the event was raised.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.LogInformation.Level">
+            <summary>
+            The level of the event, such as 'error', 'info' or 'debug'
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.LogInformation.Message">
+            <summary>
+            A Human readable message describing the event
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.LogInformation.Container">
+            <summary>
+            The container such as a method or class the event was raised from
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.LogInformation.Exception">
+            <summary>
+            A serialised <see cref="P:Chinchilla.Logging.LogInformation.Exception"/> if one was provided.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.LogInformation.AdditionalData">
+            <summary>
+            An un-serialised <see cref="T:System.Collections.Generic.IDictionary`2"/> if one was provided.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.LogInformation.MetaData">
+            <summary>
+            A serialised <see cref="T:System.Collections.Generic.IDictionary`2"/> if one was provided.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.LogInformation.CorrolationId">
+            <summary>
+            The value from <see cref="M:Chinchilla.Logging.ICorrelationIdHelper.GetCorrelationId"/>
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.MultiLogger">
+            <summary>
+            A <see cref="T:Chinchilla.Logging.ILogger"/> that has several <see cref="T:Chinchilla.Logging.ILogger"/> instances inside it that will get logs sent to.
+            </summary>
+            <remarks>
+            Due to .NET Core no longer having access to SynchronizedCollection We're using Concurrent Dictionaries, which means a little messy work with values equalling keys.
+            </remarks>
+        </member>
+        <member name="P:Chinchilla.Logging.MultiLogger.Loggers">
+            <summary>
+            The internal loggers to log to. The keys MUST match the values
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.#ctor">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.MultiLogger"/> class.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.Log(System.Action{Chinchilla.Logging.ILogger})">
+            <summary>
+            Puts the message to log into a set of <see cref="T:System.Threading.Tasks.Task"/> one for each internal logger.
+            </summary>
+            <param name="logAction"></param>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.LogSensitive(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging sensitive information,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            Depending on the implementation this won't be obscured or encrypted in anyway. Use this sparingly.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging general information, effectively the least amount of information you'd want to know about a system operation,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            Don't abuse this as you will flood the logs as this would normally never turned off. Use <see cref="M:Chinchilla.Logging.ILogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> or <see cref="M:Chinchilla.Logging.ILogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> for reporting additional information.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes logging progress information such as "Process X is 24% done"
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes diagnostic information 
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.LogWarning(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes warnings, something not yet an error, but something to watch out for,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.LogError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes errors, something handled and to be investigated,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.LogFatalError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes fatal errors that have a detrimental effect on the system,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.MultiLogger.LoggerSettings">
+            <summary>
+            The <see cref="T:Chinchilla.Logging.Configuration.ILoggerSettings"/> for the instance, set during instantiation.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.MultiLogger`1">
+            <summary>
+            A <see cref="T:Chinchilla.Logging.ILogger"/> that has several <see cref="T:Chinchilla.Logging.ILogger"/> instances inside it that will get logs sent to.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger`1.#ctor(`0)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.MultiLogger"/> class.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.MultiLogger`2">
+            <summary>
+            A <see cref="T:Chinchilla.Logging.ILogger"/> that has several <see cref="T:Chinchilla.Logging.ILogger"/> instances inside it that will get logs sent to.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger`2.#ctor(`0,`1)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.MultiLogger"/> class.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.MultiLogger`3">
+            <summary>
+            A <see cref="T:Chinchilla.Logging.ILogger"/> that has several <see cref="T:Chinchilla.Logging.ILogger"/> instances inside it that will get logs sent to.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger`3.#ctor(`0,`1,`2)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.MultiLogger"/> class.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.MultiLogger`4">
+            <summary>
+            A <see cref="T:Chinchilla.Logging.ILogger"/> that has several <see cref="T:Chinchilla.Logging.ILogger"/> instances inside it that will get logs sent to.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger`4.#ctor(`0,`1,`2,`3)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.MultiLogger"/> class.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.MultiLogger`5">
+            <summary>
+            A <see cref="T:Chinchilla.Logging.ILogger"/> that has several <see cref="T:Chinchilla.Logging.ILogger"/> instances inside it that will get logs sent to.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.MultiLogger`5.#ctor(`0,`1,`2,`3,`4)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.MultiLogger"/> class.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.NullCorrelationIdHelper">
+            <summary>
+            Always returns <see cref="F:System.Guid.Empty"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.NullCorrelationIdHelper.GetCorrelationId">
+            <summary>
+            Does nothing
+            </summary>
+            <returns><see cref="F:System.Guid.Empty"/></returns>
+        </member>
+        <member name="M:Chinchilla.Logging.NullCorrelationIdHelper.SetCorrelationId(System.Guid)">
+            <summary>
+            Returns <see cref="F:System.Guid.Empty"/>
+            </summary>
+            <returns><see cref="F:System.Guid.Empty"/></returns>
+        </member>
+        <member name="T:Chinchilla.Logging.NullTelemetryHelper">
+            <summary>
+            Does nothing but stops <see cref="T:System.NullReferenceException"/> being raised.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.NullTelemetryHelper.TrackEvent(System.String,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send an event.
+            </summary>
+            <param name="eventName">A name for the event.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.NullTelemetryHelper.TrackMetric(System.String,System.Double,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send a metric.
+            </summary>
+            <param name="name">Metric name.</param>
+            <param name="value">Metric value.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.NullTelemetryHelper.TrackException(System.Exception,System.Collections.Generic.IDictionary{System.String,System.Double},System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send an Exception
+            </summary>
+            <param name="exception">The exception to log.</param>
+            <param name="metrics">Additional values associated with this exception.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.NullTelemetryHelper.TrackDependency(System.String,System.String,System.DateTimeOffset,System.TimeSpan,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send information about an external dependency call in the application, such as a call to a database.
+            </summary>
+            <param name="dependencyName">External dependency name.</param>
+            <param name="commandName">Dependency call command name.</param>
+            <param name="startTime">The time when the dependency was called.</param>
+            <param name="duration">The time taken by the external dependency to handle the call.</param>
+            <param name="wasSuccessfull">True if the dependency call was handled successfully.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.NullTelemetryHelper.TrackDependency(System.String,System.String,System.String,System.String,System.DateTimeOffset,System.TimeSpan,System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send information about an external dependency call in the application, such as a web-service call
+            </summary>
+            <param name="dependencyTypeName">External dependency type.</param>
+            <param name="target">External dependency target.</param>
+            <param name="dependencyName">External dependency name.</param>
+            <param name="data">Dependency call command name.</param>
+            <param name="startTime">The time when the dependency was called.</param>
+            <param name="duration">The time taken by the external dependency to handle the call.</param>
+            <param name="resultCode">Result code of dependency call execution.</param>
+            <param name="wasSuccessfull">True if the dependency call was handled successfully.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.NullTelemetryHelper.TrackRequest(System.String,System.DateTimeOffset,System.TimeSpan,System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String})">
+            <summary>
+            Send information about a request handled by the application.
+            </summary>
+            <param name="name">The request name.</param>
+            <param name="startTime">The time when the page was requested.</param>
+            <param name="duration">The time taken by the application to handle the request.</param>
+            <param name="responseCode">The response status code.</param>
+            <param name="wasSuccessfull">True if the request was handled successfully by the application.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.NullTelemetryHelper.TrackRequest(System.String,System.Uri,System.String,System.DateTimeOffset,System.TimeSpan,System.String,System.Boolean,System.Collections.Generic.IDictionary{System.String,System.String},System.String)">
+            <summary>
+            Send information about a request handled by the application.
+            </summary>
+            <param name="name">The request name.</param>
+            <param name="url"></param>
+            <param name="userId">The ID of user accessing the application.</param>
+            <param name="startTime">The time when the page was requested.</param>
+            <param name="duration">The time taken by the application to handle the request.</param>
+            <param name="responseCode">The response status code.</param>
+            <param name="wasSuccessfull">True if the request was handled successfully by the application.</param>
+            <param name="properties">Named string values you can use to search and classify events.</param>
+            <param name="sessionId">The application-defined session ID.</param>
+        </member>
+        <member name="M:Chinchilla.Logging.NullTelemetryHelper.Flush">
+            <summary>
+            Flushes the in-memory buffer, if one exists
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.PrimitiveLogger">
+            <summary>
+            Provides a set of methods that help you log events relating to the execution of your code.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.PrimitiveLogger.#ctor(Chinchilla.Logging.Configuration.ILoggerSettings,Chinchilla.Logging.ICorrelationIdHelper,Chinchilla.Logging.ITelemetryHelper)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.StringLogger"/> class.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.PrimitiveLogger.GenerateLogMessage(System.String,System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Format a message based on the input parameters.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.SqlLogger">
+            <summary>
+            Provides a set of methods that help you log events relating to the execution of your code outputting to a SqlServer database.
+            </summary>
+            <remarks>
+            If the table created is not suitable, override the methods that generate the sql statements.
+            </remarks>
+        </member>
+        <member name="M:Chinchilla.Logging.SqlLogger.#ctor(Chinchilla.Logging.Configuration.ILoggerSettings,Chinchilla.Logging.ICorrelationIdHelper,Chinchilla.Logging.ITelemetryHelper)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.DatabaseLogger"/> class calling the constructor on <see cref="T:Chinchilla.Logging.DatabaseLogger"/>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.SqlLogger.#ctor(Chinchilla.Logging.Configuration.ILoggerSettings,Chinchilla.Logging.ICorrelationIdHelper,System.Boolean)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.DatabaseLogger"/> class calling the constructor on <see cref="T:Chinchilla.Logging.DatabaseLogger"/>.
+            This will attempt to create the table in the database if not yet created and <paramref name="createTable"/> is true.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.SqlLogger.GetDbConnection(System.String)">
+            <summary />
+        </member>
+        <member name="M:Chinchilla.Logging.SqlLogger.GetCommand">
+            <summary />
+        </member>
+        <member name="M:Chinchilla.Logging.SqlLogger.GetWriteTransaction(System.Data.IDbConnection)">
+            <summary />
+        </member>
+        <member name="T:Chinchilla.Logging.StringLogger">
+            <summary>
+            Provides a set of methods that help you log events relating to the execution of your code when using persistence that is single string based, like a file, event log or tracer.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.#ctor(Chinchilla.Logging.Configuration.ILoggerSettings,Chinchilla.Logging.ICorrelationIdHelper,Chinchilla.Logging.ITelemetryHelper)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.StringLogger"/> class.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogSensitive(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging sensitive information,
+            to <see cref="M:Chinchilla.Logging.StringLogger.LogInfoString(System.String)"/>
+            Depending on the implementation this won't be obscured or encrypted in anyway. Use this sparingly.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging general information, effectively the least amount of information you'd want to know about a system operation,
+            to <see cref="M:Chinchilla.Logging.StringLogger.LogInfoString(System.String)"/>
+            Don't abuse this as you will flood the logs as this would normally never turned off. Use <see cref="M:Chinchilla.Logging.StringLogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> or <see cref="M:Chinchilla.Logging.StringLogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> for reporting additional information.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes logging progress information such as "Process X is 24% done"
+            to <see cref="M:Chinchilla.Logging.StringLogger.LogInfoString(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes diagnostic information 
+            to <see cref="M:Chinchilla.Logging.StringLogger.LogDebugString(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogWarning(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes warnings, something not yet an error, but something to watch out for,
+            to <see cref="M:Chinchilla.Logging.StringLogger.LogWarningString(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes errors, something handled and to be investigated,
+            to <see cref="M:Chinchilla.Logging.StringLogger.LogErrorString(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogFatalError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes fatal errors that have a detrimental effect on the system,
+            to <see cref="M:Chinchilla.Logging.StringLogger.LogFatalErrorString(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.Log(System.String,System.Action{System.String},System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Format a message based on the input parameters to be sent to <paramref name="logAction"></paramref>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogSensitiveString(System.String)">
+            <summary>
+            Writes sensitive information to the string based logger.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogInfoString(System.String)">
+            <summary>
+            Writes an informational message to the string based logger.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogProgressString(System.String)">
+            <summary>
+            Writes logging progress information such as "Process X is 24% done" to the string based logger.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogDebugString(System.String)">
+            <summary>
+            Writes a debugging message to the string based logger.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogWarningString(System.String)">
+            <summary>
+            Writes a warning message to the string based logger.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogErrorString(System.String)">
+            <summary>
+            Writes an error message to the string based logger.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.StringLogger.LogFatalErrorString(System.String)">
+            <summary>
+            Writes a fatal error message to the string based logger.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.TraceLogger">
+            <summary>
+            Provides a set of methods that help you log events relating to the execution of your code outputting to <see cref="T:System.Diagnostics.Trace"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.TraceLogger.#ctor(Chinchilla.Logging.Configuration.ILoggerSettings,Chinchilla.Logging.ICorrelationIdHelper,Chinchilla.Logging.ITelemetryHelper)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.TraceLogger"/> class.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.TraceLogger.LogSensitiveString(System.String)">
+            <summary>
+            Writes sensitive information to <see cref="M:System.Diagnostics.Trace.TraceInformation(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.TraceLogger.LogInfoString(System.String)">
+            <summary>
+            Writes an informational message to <see cref="M:System.Diagnostics.Trace.TraceInformation(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.TraceLogger.LogProgressString(System.String)">
+            <summary>
+            Writes logging progress information such as "Process X is 24% done" to <see cref="M:System.Diagnostics.Trace.TraceInformation(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.TraceLogger.LogDebugString(System.String)">
+            <summary>
+            Writes a debugging message to <see cref="M:System.Diagnostics.Trace.TraceInformation(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.TraceLogger.LogWarningString(System.String)">
+            <summary>
+            Writes a warning message to <see cref="M:System.Diagnostics.Trace.TraceWarning(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.TraceLogger.LogErrorString(System.String)">
+            <summary>
+            Writes an error message to <see cref="M:System.Diagnostics.Trace.TraceError(System.String)"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.TraceLogger.LogFatalErrorString(System.String)">
+            <summary>
+            Writes a fatal error message to <see cref="M:System.Diagnostics.Trace.TraceError(System.String)"/>
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.VeryPrimitiveLogger">
+            <summary>
+            Provides a set of methods that help you log events relating to the execution of your code.
+            </summary>
+            <remarks>
+            Due to .NET Core no longer having access to SynchronizedCollection We're using Concurrent Dictionaries, which means a little messy work with values equalling keys.
+            </remarks>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.#ctor(Chinchilla.Logging.Configuration.ILoggerSettings,Chinchilla.Logging.ICorrelationIdHelper,Chinchilla.Logging.ITelemetryHelper)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.StringLogger"/> class.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.VeryPrimitiveLogger.TelemetryHelper">
+            <summary>
+            The <see cref="T:Chinchilla.Logging.ITelemetryHelper"/> for the instance, set during Instantiation
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.VeryPrimitiveLogger.LoggerSettings">
+            <summary>
+            The <see cref="T:Chinchilla.Logging.Configuration.ILoggerSettings"/> for the instance, set during Instantiation
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.VeryPrimitiveLogger.CorrelationIdHelper">
+            <summary>
+            The <see cref="T:Chinchilla.Logging.ICorrelationIdHelper"/> for the instance, set during Instantiation
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.VeryPrimitiveLogger.ExclusionNamespaces">
+            <summary>
+            A list of namespaces to exclude when trying to automatically determine the container. The key and the value MUST match each other.
+            </summary>
+        </member>
+        <member name="P:Chinchilla.Logging.VeryPrimitiveLogger.EnableThreadedLoggingOutput">
+            <summary />
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.Log(System.Action,System.String,System.String)">
+            <summary>
+            Format a message based on the input parameters to be sent to <paramref name="logAction"></paramref>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.UseOrBuildContainerName(System.String)">
+            <summary>
+            If <paramref name="container"/> is null or empty, generate a container name, otherwise return <paramref name="container"/>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.GetSetting(System.String,System.Func{Chinchilla.Logging.Configuration.IContainerLoggerSettings,System.Func{System.String,System.Boolean}},System.Boolean)">
+            <summary>
+            Get a boolean setting trying a <see cref="T:Chinchilla.Logging.Configuration.IContainerLoggerSettings"/> first then <see cref="P:Chinchilla.Logging.VeryPrimitiveLogger.LoggerSettings"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.GetSetting(System.String,System.Func{Chinchilla.Logging.Configuration.IContainerLoggerSettings,System.Func{System.String,System.String}},System.String)">
+            <summary>
+            Get a string setting trying a <see cref="T:Chinchilla.Logging.Configuration.IContainerLoggerSettings"/> first then <see cref="P:Chinchilla.Logging.VeryPrimitiveLogger.LoggerSettings"/>
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.Dispose">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.Dispose(System.Boolean)">
+            <summary>
+            Performs application-defined tasks associated with freeing, releasing, or resetting unmanaged resources.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.LogSensitive(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging sensitive information,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            Depending on the implementation this won't be obscured or encrypted in anyway. Use this sparingly.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.LogInfo(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            This is for logging general information, effectively the least amount of information you'd want to know about a system operation,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            Don't abuse this as you will flood the logs as this would normally never turned off. Use <see cref="M:Chinchilla.Logging.ILogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> or <see cref="M:Chinchilla.Logging.ILogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})"/> for reporting additional information.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.LogProgress(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes logging progress information such as "Process X is 24% done"
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.LogDebug(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes diagnostic information 
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.LogWarning(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes warnings, something not yet an error, but something to watch out for,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.LogError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes errors, something handled and to be investigated,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="M:Chinchilla.Logging.VeryPrimitiveLogger.LogFatalError(System.String,System.String,System.Exception,System.Collections.Generic.IDictionary{System.String,System.Object},System.Collections.Generic.IDictionary{System.String,System.Object})">
+            <summary>
+            Writes fatal errors that have a detrimental effect on the system,
+            to the <see cref="T:Chinchilla.Logging.ILogger"/> using the specified <paramref name="message"></paramref>.
+            </summary>
+        </member>
+        <member name="T:Chinchilla.Logging.WebCorrelationIdHelper">
+            <summary>
+            A <see cref="T:Chinchilla.Logging.ICorrelationIdHelper"/> that uses the <see cref="M:Chinchilla.StateManagement.Web.WebContextItemCollectionFactory.GetCurrentContext"/> method to get a transport collection within the <see cref="T:System.Threading.Thread"/>.
+            </summary>
+            <remarks>https://dzimchuk.net/event-correlation-in-application-insights/</remarks>
+        </member>
+        <member name="M:Chinchilla.Logging.WebCorrelationIdHelper.#ctor(Chinchilla.StateManagement.Web.WebContextItemCollectionFactory)">
+            <summary>
+            Instantiates a new instance of the <see cref="T:Chinchilla.Logging.WebCorrelationIdHelper"/> class requiring <paramref name="contextItemCollectionFactory"/>, used to set the internal collection with an instance.
+            </summary>
+        </member>
+    </members>
+</doc>

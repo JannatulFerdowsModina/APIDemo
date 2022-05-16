@@ -4636,6 +4636,19 @@
         "runtime": {
           "bin/placeholder/Service.dll": {}
         }
+      },
+      "UnitTests/1.0.0": {
+        "type": "project",
+        "dependencies": {
+          "Data": "1.0.0",
+          "Service": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/UnitTests.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/UnitTests.dll": {}
+        }
       }
     }
   },
@@ -12623,6 +12636,11 @@
       "type": "project",
       "path": "../Service/Service.csproj",
       "msbuildProject": "../Service/Service.csproj"
+    },
+    "UnitTests/1.0.0": {
+      "type": "project",
+      "path": "../UnitTests/UnitTests.csproj",
+      "msbuildProject": "../UnitTests/UnitTests.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12634,7 +12652,8 @@
       "Microsoft.EntityFrameworkCore.Tools >= 2.1.2",
       "Microsoft.NETCore.App >= 2.1.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 2.1.9",
-      "Service >= 1.0.0"
+      "Service >= 1.0.0",
+      "UnitTests >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12670,12 +12689,16 @@
       },
       "frameworks": {
         "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
           "projectReferences": {
             "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj": {
               "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Data\\Data.csproj"
             },
             "C:\\Users\\BS769\\source\\repos\\APIDemo\\Service\\Service.csproj": {
               "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\Service\\Service.csproj"
+            },
+            "C:\\Users\\BS769\\source\\repos\\APIDemo\\UnitTests\\UnitTests.csproj": {
+              "projectPath": "C:\\Users\\BS769\\source\\repos\\APIDemo\\UnitTests\\UnitTests.csproj"
             }
           }
         }
@@ -12688,6 +12711,7 @@
     },
     "frameworks": {
       "netcoreapp2.1": {
+        "targetAlias": "netcoreapp2.1",
         "dependencies": {
           "Microsoft.AspNetCore.App": {
             "suppressParent": "All",
@@ -12711,6 +12735,7 @@
             "version": "[2.1.2, )"
           },
           "Microsoft.NETCore.App": {
+            "suppressParent": "All",
             "target": "Package",
             "version": "[2.1.0, )",
             "autoReferenced": true
@@ -12721,10 +12746,16 @@
           }
         },
         "imports": [
-          "net461"
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
         ],
         "assetTargetFallback": true,
-        "warn": true
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.105\\RuntimeIdentifierGraph.json"
       }
     }
   }

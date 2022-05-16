@@ -54,8 +54,8 @@ C:\Users\BS769\source\repos\APIDemo\Service\bin\Debug\System.Numerics.Vectors.xm
 C:\Users\BS769\source\repos\APIDemo\Service\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\BS769\source\repos\APIDemo\Service\bin\Debug\Microsoft.EntityFrameworkCore.Relational.xml
 C:\Users\BS769\source\repos\APIDemo\Service\bin\Debug\Microsoft.EntityFrameworkCore.SqlServer.xml
-C:\Users\BS769\source\repos\APIDemo\Service\obj\Debug\Service.csprojAssemblyReference.cache
 C:\Users\BS769\source\repos\APIDemo\Service\obj\Debug\Service.csproj.CoreCompileInputs.cache
 C:\Users\BS769\source\repos\APIDemo\Service\obj\Debug\Service.csproj.CopyComplete
 C:\Users\BS769\source\repos\APIDemo\Service\obj\Debug\Service.dll
 C:\Users\BS769\source\repos\APIDemo\Service\obj\Debug\Service.pdb
+C:\Users\BS769\source\repos\APIDemo\Service\obj\Debug\Service.csproj.AssemblyReference.cache
